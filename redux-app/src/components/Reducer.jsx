@@ -12,7 +12,7 @@ const likeCounterReducer = (state = initialState, action) => {
     case "DECREMENT":
       return {
         ...state,
-        likeCount: state.likeCount - 1,
+        likeCount: Math.max(0, state.likeCount - 1),
       };
     default:
       return state;
